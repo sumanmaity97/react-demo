@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import background from "../../public/loginBg.jpg";
-import TextInput from "../components/TextInput";
 import '../styles/Login.css';
 
 function Login() {
