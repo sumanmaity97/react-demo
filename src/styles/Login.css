@@ -31,6 +31,7 @@
     border-radius: 5px;
     font-size: 16px;
     background: transparent;
+    color: white;
 }
 
 .submit-button {
@@ -54,4 +55,21 @@
     color: #f53131;
     font-size: 14px;
     text-align: left;
+}
+
+.btn-wrap{
+    flex-direction: column;
+}
+
+.mar-top {
+    margin-top: 10px;
+}
+
+.dont-text{
+    color: rgb(204, 245, 245);
+    font-size: 14px;
+}
+
+.dont-text:hover {
+    color: rgb(238, 179, 142);
 }
