@@ -43,6 +43,7 @@ function Login() {
                 }
                 console.log(userList[findIndex]);
                 localStorage.setItem('userData', JSON.stringify(userList[findIndex]));
+                localStorage.setItem('token', '1234');
                 showToast('Successfully logged in!', "success");
                 navigate("/home");
             }

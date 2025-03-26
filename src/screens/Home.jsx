@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import '../styles/Home.css';
 import { showToast } from "../utils/helpers";
 import Checkbox from '@mui/material/Checkbox';
+import ProfileHeader from "../component/ProfileHeader";
 
 function Home() {
 
@@ -42,12 +43,12 @@ function Home() {
     };
 
     const clearSelected = () => {
-        if(selectedIndex.length === 0){
+        if (selectedIndex.length === 0) {
             showToast("Please select at least one item!", "error");
             return;
         }
         let arr = [...noteList];
-        for(let i = 0; i < selectedIndex.length; i++){
+        for (let i = 0; i < selectedIndex.length; i++) {
             arr.splice(selectedIndex[i], 1);
         }
         console.log('AFTER: ', arr);
@@ -63,6 +64,7 @@ function Home() {
 
     return (
         <div className="home-background">
+            <ProfileHeader profile={JSON.parse(localStorage.getItem('userData'))} />
             <div className="note-input-card" >
                 <h3 className="note">Add Notes</h3>
                 <div style={{ textAlign: 'center', marginTop: '20px' }}>
@@ -81,7 +83,7 @@ function Home() {
                 </div>
 
             </div>
-            <div className="space"/>
+            <div className="space" />
             <div >
                 <h3 className="note">Notes</h3>
                 <div>
@@ -96,6 +98,12 @@ function Home() {
                                                     size="small"
                                                     checked={selectedIndex.includes(index)}
                                                     onChange={() => handleCheckboxChange(index)}
+                                                    sx={{
+                                                        color: "#f9a3a3",
+                                                        '&.Mui-checked': {
+                                                            color: "#f53131",
+                                                        },
+                                                    }}
                                                 />
                                                 <p className="note">{name}</p>
 
